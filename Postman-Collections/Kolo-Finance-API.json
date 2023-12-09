@@ -29,6 +29,16 @@
 										],
 										"type": "text/javascript"
 									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "f2358f2c-6dc8-4344-a896-93dacb7bf094",
+										"exec": [
+											"pm.environment.set(\"base_url\", \"https://vigil.lendsqr.com/kolo.finance\")"
+										],
+										"type": "text/javascript"
+									}
 								}
 							],
 							"id": "2073c60f-511f-49c0-ae5f-72369a0d36d6",
