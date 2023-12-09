@@ -1021,6 +1021,8 @@
 									"script": {
 										"id": "6f206c54-858d-4085-a272-b8ffedf0f19d",
 										"exec": [
+											"pm.environment.set('access-token', pm.response.headers.get('access-token'))\r",
+											"\r",
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
