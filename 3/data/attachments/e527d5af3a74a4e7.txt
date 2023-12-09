@@ -1,0 +1,1 @@
+{"message":"categories[0] is not allowed to be empty"}

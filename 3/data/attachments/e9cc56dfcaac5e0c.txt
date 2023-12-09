@@ -1,0 +1,1 @@
+{"message":"Bank account exists on your profile"}
