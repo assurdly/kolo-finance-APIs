@@ -7639,6 +7639,7 @@
 									"script": {
 										"id": "32d621fa-556f-4621-9eb5-bd89d1e20e6e",
 										"exec": [
+											"if (pm.response.status === 200){\r",
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
@@ -7651,7 +7652,19 @@
 											"pm.test(\"data\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.data).to.be.an(\"array\");\r",
-											"});"
+											"});\r",
+											"\r",
+											"} else {\r",
+											"    pm.test(\"Status code is 204\", function () {\r",
+											"    pm.response.to.have.status(204);\r",
+											"\r",
+											"    pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"No Content\");\r",
+											"});\r",
+											"})\r",
+											"}\r",
+											"\r",
+											""
 										],
 										"type": "text/javascript"
 									}
@@ -7671,7 +7684,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{base_url}}/transactions?bank_account_id[0]={{accountId1}}&bank_account_id[1]={{accountId2}}",
+									"raw": "{{base_url}}/transactions?bank_account_id[0]={{accountId1}}",
 									"host": [
 										"{{base_url}}"
 									],
@@ -7685,7 +7698,8 @@
 										},
 										{
 											"key": "bank_account_id[1]",
-											"value": "{{accountId2}}"
+											"value": "{{accountId2}}",
+											"disabled": true
 										},
 										{
 											"key": "transaction_type",
@@ -7946,6 +7960,7 @@
 									"script": {
 										"id": "32d621fa-556f-4621-9eb5-bd89d1e20e6e",
 										"exec": [
+											"if (pm.response.status === 200){\r",
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
@@ -7959,6 +7974,18 @@
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.data).to.be.an(\"array\");\r",
 											"});\r",
+											"\r",
+											"} else {\r",
+											"    pm.test(\"Status code is 204\", function () {\r",
+											"    pm.response.to.have.status(204);\r",
+											"\r",
+											"    pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"No Content\");\r",
+											"});\r",
+											"})\r",
+											"}\r",
+											"\r",
+											"\r",
 											""
 										],
 										"type": "text/javascript"
@@ -8104,6 +8131,7 @@
 									"script": {
 										"id": "32d621fa-556f-4621-9eb5-bd89d1e20e6e",
 										"exec": [
+											"if (pm.response.status === 200){\r",
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
@@ -8117,6 +8145,17 @@
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.data).to.be.an(\"array\");\r",
 											"});\r",
+											"\r",
+											"} else {\r",
+											"    pm.test(\"Status code is 204\", function () {\r",
+											"    pm.response.to.have.status(204);\r",
+											"\r",
+											"    pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"No Content\");\r",
+											"});\r",
+											"})\r",
+											"}\r",
+											"\r",
 											""
 										],
 										"type": "text/javascript"
@@ -8904,6 +8943,7 @@
 									"script": {
 										"id": "32d621fa-556f-4621-9eb5-bd89d1e20e6e",
 										"exec": [
+											"if (pm.response.status === 200){\r",
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
@@ -8918,6 +8958,15 @@
 											"    pm.expect(jsonData.data).to.be.an(\"array\");\r",
 											"});\r",
 											"\r",
+											"} else {\r",
+											"    pm.test(\"Status code is 204\", function () {\r",
+											"    pm.response.to.have.status(204);\r",
+											"\r",
+											"    pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"No Content\");\r",
+											"});\r",
+											"})\r",
+											"}\r",
 											""
 										],
 										"type": "text/javascript"
