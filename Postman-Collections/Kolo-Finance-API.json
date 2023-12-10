@@ -5443,7 +5443,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"bank_id\": \"{{accessbankId}}\",\n    \"account_number\": \"0029846969\",\n      \"data_source\": [\"email\",\"sms\"],\n    \"description\": \"This is my savings account\"\n}",
+									"raw": "{\n    \"bank_id\": \"{{accessbankId}}\",\n    \"account_number\": \"0008854010\",\n      \"data_source\": [\"email\",\"sms\"],\n    \"description\": \"This is my savings account\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -6572,7 +6572,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"account_number\": \"0029846969\",\n    \"data_source\":[\"sms\"],\n    \"description\": \"This is my current account\"\n}",
+									"raw": "{\n    \"account_number\": \"0008854010\",\n    \"data_source\":[\"sms\"],\n    \"description\": \"This is my current account\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
