@@ -1,0 +1,1 @@
+{"status":"success","data":{"account_name":"AZEEZ O IBRAHIM","account_number":"0008854010","data_source":["email","sms"],"description":"This is my savings account","id":"ed343e3b-2fdc-4c1e-805a-7e99aecaa6b8","created_on":"2023-12-10T07:55:44.909Z","deleted_on":null}}
