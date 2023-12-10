@@ -1,0 +1,1 @@
+{"status":"success","data":{"entries":[{"amount":"0.00","type":"credit"},{"amount":"0.00","type":"debit"}],"transaction_dates":[{"max":null,"min":null}]}}

@@ -1,0 +1,1 @@
+{"status":"success","data":{"id":"8430a22f-28ba-4a27-93a5-39fa0edc8486","account_name":"AZEEZ O IBRAHIM","account_number":"0008854010","balance":null,"last_balance_time":null,"data_source":["sms"],"description":"This is my current account","created_on":"2023-12-10T00:48:40.858Z","created_by":null,"modified_on":null,"modified_by":null,"deleted_on":null,"deleted_by":null}}
