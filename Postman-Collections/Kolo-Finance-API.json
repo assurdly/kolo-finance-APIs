@@ -3938,9 +3938,8 @@
 									],
 									"variable": [
 										{
-											"id": "2b9f8ebc-d921-4cee-8aa5-d06532c3c479",
 											"key": "provider",
-											"value": "google"
+											"value": ""
 										}
 									]
 								}
