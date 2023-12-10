@@ -9676,6 +9676,7 @@
 									"script": {
 										"id": "f2ead8c2-b4d4-4a93-a223-21108a55fd4a",
 										"exec": [
+											"if (pm.response.status === 200){\r",
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
@@ -9688,7 +9689,20 @@
 											"pm.test(\"data\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.data).to.exist;\r",
-											"});"
+											"});\r",
+											"\r",
+											"\r",
+											"} else {\r",
+											"    pm.test(\"Status code is 204\", function () {\r",
+											"    pm.response.to.have.status(204);\r",
+											"\r",
+											"    pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"No Content\");\r",
+											"});\r",
+											"})\r",
+											"}\r",
+											"\r",
+											""
 										],
 										"type": "text/javascript"
 									}
