@@ -6401,7 +6401,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Bad Request\");\r",
 											"});\r",
-											"pm.test(\"Body contains data\", function () {\r",
+											"pm.test(\"Message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"account_number is not allowed to be empty\");\r",
 											"});"
 										],
@@ -6546,7 +6546,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
-											"pm.test(\"Body contains data\", function () {\r",
+											"pm.test(\"Data\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"data\");\r",
 											"});"
 										],
@@ -6697,7 +6697,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Not Found\");\r",
 											"});\r",
-											"pm.test(\"Body matches message\", function () {\r",
+											"pm.test(\"Message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});"
 										],
@@ -6797,7 +6797,7 @@
 											"pm.test(\"Body matches string\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"status\");\r",
 											"});\r",
-											"pm.test(\"Your test name\", function () {\r",
+											"pm.test(\"Data\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.data).to.exist;\r",
 											"});"
@@ -6901,7 +6901,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Not Found\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});"
 										],
@@ -6957,7 +6957,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});\r",
 											""
@@ -7019,7 +7019,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Not Found\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});\r",
 											""
