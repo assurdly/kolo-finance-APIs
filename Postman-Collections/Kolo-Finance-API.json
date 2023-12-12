@@ -10754,56 +10754,152 @@
 			"name": "Notifications",
 			"item": [
 				{
-					"name": "Persist Notification Token Without Token",
-					"event": [
+					"name": "Persist Notification",
+					"item": [
 						{
-							"listen": "test",
-							"script": {
-								"id": "8038be31-792d-471b-845e-5d7d936a231c",
-								"exec": [
-									"pm.test(\"Status code is 400\", function () {\r",
-									"    pm.response.to.have.status(400);\r",
-									"});\r",
-									"pm.test(\"Status code name has string\", function () {\r",
-									"    pm.response.to.have.status(\"Bad Request\");\r",
-									"});\r",
-									"pm.test(\"Verify that response body contains message\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"message\");\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "66cce5b8-629f-414b-afb9-2af82a2e0312",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{access-token}}"
-							}
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"token\": \"\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+							"name": "Persist Notification Token Without Token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8038be31-792d-471b-845e-5d7d936a231c",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"Bad Request\");\r",
+											"});\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
 								}
-							}
+							],
+							"id": "66cce5b8-629f-414b-afb9-2af82a2e0312",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{access-token}}"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"token\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/notifications"
+							},
+							"response": [
+								{
+									"id": "395c6b46-c7da-4a5d-a311-66f52d077e54",
+									"name": "Persist Notification Token",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"token\": \"token\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/notifications"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "X-Request-ID",
+											"value": "null"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "61"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3d-HqYVLIQdcRBq3lKKLva3ZJ6NKAA\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 18 Oct 2023 10:41:43 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"Successfully updated firebase token\",\n    \"data\": null\n}"
+								}
+							]
 						},
-						"url": "{{base_url}}/notifications"
-					},
-					"response": [
 						{
-							"id": "395c6b46-c7da-4a5d-a311-66f52d077e54",
 							"name": "Persist Notification Token",
-							"originalRequest": {
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8038be31-792d-471b-845e-5d7d936a231c",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "ad2453d8-7a1c-4b48-a60e-055c3e4f64cb",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{access-token}}"
+									}
+								},
 								"method": "PUT",
 								"header": [],
 								"body": {
@@ -10817,361 +10913,277 @@
 								},
 								"url": "{{base_url}}/notifications"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "X-Request-ID",
-									"value": "null"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "61"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"3d-HqYVLIQdcRBq3lKKLva3ZJ6NKAA\""
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 18 Oct 2023 10:41:43 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"id": "c51207f7-7207-4b5b-9c36-d805917a0571",
+									"name": "Persist Notification Token",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"token\": \"token\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/notifications"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "X-Request-ID",
+											"value": "null"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "61"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3d-HqYVLIQdcRBq3lKKLva3ZJ6NKAA\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 18 Oct 2023 10:41:43 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"Successfully updated firebase token\",\n    \"data\": null\n}"
 								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"message\": \"Successfully updated firebase token\",\n    \"data\": null\n}"
-						}
-					]
-				},
-				{
-					"name": "Persist Notification Token",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "8038be31-792d-471b-845e-5d7d936a231c",
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"pm.test(\"Status code name has string\", function () {\r",
-									"    pm.response.to.have.status(\"OK\");\r",
-									"});\r",
-									"pm.test(\"Body matches string\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"message\");\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
+							]
 						}
 					],
-					"id": "ad2453d8-7a1c-4b48-a60e-055c3e4f64cb",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{access-token}}"
-							}
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"token\": \"token\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{base_url}}/notifications"
-					},
-					"response": [
+					"id": "71587b01-ad4a-4ec1-8b9d-f386c4a620ec"
+				},
+				{
+					"name": "Get Notification",
+					"item": [
 						{
-							"id": "c51207f7-7207-4b5b-9c36-d805917a0571",
-							"name": "Persist Notification Token",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"token\": \"token\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
+							"name": "Get Notifications With Invalid Endpoint",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "fa42fe5c-f06f-4b0d-b0f5-11b0f9383de4",
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {\r",
+											"    pm.response.to.have.status(404);\r",
+											"});\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"Not Found\");\r",
+											"});\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "4a8ff0d0-f2f3-4b02-abb7-265499fab787",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{access-token}}"
 									}
 								},
-								"url": "{{base_url}}/notifications"
+								"method": "GET",
+								"header": [],
+								"url": "{{base_url}}/notificatio"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
+									"id": "633f4e7a-489c-4629-9c51-02096af1148b",
+									"name": "Get Notifications",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{base_url}}/notifications"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Expose-Headers",
+											"value": "access-token"
+										},
+										{
+											"key": "X-Request-ID",
+											"value": "null"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "254"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"fe-YIYZADB0+DUdeLvhBdHLeCwTFyA\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 24 Oct 2023 11:42:01 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": null,\n            \"device_id\": null,\n            \"title\": \"Welcome to Kolo\",\n            \"body\": \"Welcome to Kolo\",\n            \"created_on\": \"2023-10-24T10:37:33.841Z\",\n            \"created_by\": null,\n            \"modified_on\": null,\n            \"modified_by\": null,\n            \"deleted_on\": null,\n            \"deleted_by\": null\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Notifications",
+							"event": [
 								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "X-Request-ID",
-									"value": "null"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "61"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"3d-HqYVLIQdcRBq3lKKLva3ZJ6NKAA\""
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 18 Oct 2023 10:41:43 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"listen": "test",
+									"script": {
+										"id": "57f02c11-2d72-47be-87df-eca0dcb9e10c",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
+											"});\r",
+											"pm.test(\"Verify that response body contains data\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.data).to.be.an(\"array\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
 								}
 							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"message\": \"Successfully updated firebase token\",\n    \"data\": null\n}"
-						}
-					]
-				},
-				{
-					"name": "Get Notifications With Invalid Endpoint",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "fa42fe5c-f06f-4b0d-b0f5-11b0f9383de4",
-								"exec": [
-									"pm.test(\"Status code is 404\", function () {\r",
-									"    pm.response.to.have.status(404);\r",
-									"});\r",
-									"pm.test(\"Status code name has string\", function () {\r",
-									"    pm.response.to.have.status(\"Not Found\");\r",
-									"});\r",
-									"pm.test(\"Verify that response body contains message\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"message\");\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "4a8ff0d0-f2f3-4b02-abb7-265499fab787",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{access-token}}"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{base_url}}/notificatio"
-					},
-					"response": [
-						{
-							"id": "633f4e7a-489c-4629-9c51-02096af1148b",
-							"name": "Get Notifications",
-							"originalRequest": {
+							"id": "ea179b73-0379-43a5-b002-b245fcb2d457",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{access-token}}"
+									}
+								},
 								"method": "GET",
 								"header": [],
 								"url": "{{base_url}}/notifications"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Expose-Headers",
-									"value": "access-token"
-								},
-								{
-									"key": "X-Request-ID",
-									"value": "null"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "254"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"fe-YIYZADB0+DUdeLvhBdHLeCwTFyA\""
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 24 Oct 2023 11:42:01 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"id": "a008f1ba-c615-47ff-8820-4425e1c3c7f2",
+									"name": "Get Notifications",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{base_url}}/notifications"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Expose-Headers",
+											"value": "access-token"
+										},
+										{
+											"key": "X-Request-ID",
+											"value": "null"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "254"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"fe-YIYZADB0+DUdeLvhBdHLeCwTFyA\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 24 Oct 2023 11:42:01 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": null,\n            \"device_id\": null,\n            \"title\": \"Welcome to Kolo\",\n            \"body\": \"Welcome to Kolo\",\n            \"created_on\": \"2023-10-24T10:37:33.841Z\",\n            \"created_by\": null,\n            \"modified_on\": null,\n            \"modified_by\": null,\n            \"deleted_on\": null,\n            \"deleted_by\": null\n        }\n    ]\n}"
 								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": null,\n            \"device_id\": null,\n            \"title\": \"Welcome to Kolo\",\n            \"body\": \"Welcome to Kolo\",\n            \"created_on\": \"2023-10-24T10:37:33.841Z\",\n            \"created_by\": null,\n            \"modified_on\": null,\n            \"modified_by\": null,\n            \"deleted_on\": null,\n            \"deleted_by\": null\n        }\n    ]\n}"
-						}
-					]
-				},
-				{
-					"name": "Get Notifications",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "57f02c11-2d72-47be-87df-eca0dcb9e10c",
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"pm.test(\"Status code name has string\", function () {\r",
-									"    pm.response.to.have.status(\"OK\");\r",
-									"});\r",
-									"pm.test(\"Verify that response body contains message\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"message\");\r",
-									"});\r",
-									"pm.test(\"Verify that response body contains data\", function () {\r",
-									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.data).to.be.an(\"array\");\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
+							]
 						}
 					],
-					"id": "ea179b73-0379-43a5-b002-b245fcb2d457",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{access-token}}"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{base_url}}/notifications"
-					},
-					"response": [
-						{
-							"id": "a008f1ba-c615-47ff-8820-4425e1c3c7f2",
-							"name": "Get Notifications",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": "{{base_url}}/notifications"
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Expose-Headers",
-									"value": "access-token"
-								},
-								{
-									"key": "X-Request-ID",
-									"value": "null"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "254"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"fe-YIYZADB0+DUdeLvhBdHLeCwTFyA\""
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 24 Oct 2023 11:42:01 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": null,\n            \"device_id\": null,\n            \"title\": \"Welcome to Kolo\",\n            \"body\": \"Welcome to Kolo\",\n            \"created_on\": \"2023-10-24T10:37:33.841Z\",\n            \"created_by\": null,\n            \"modified_on\": null,\n            \"modified_by\": null,\n            \"deleted_on\": null,\n            \"deleted_by\": null\n        }\n    ]\n}"
-						}
-					]
+					"id": "6fd5d12e-0585-46b1-89b3-b873fb81a14e"
 				}
 			],
 			"id": "3d464929-6788-494e-85ee-9c39431e40f7"
