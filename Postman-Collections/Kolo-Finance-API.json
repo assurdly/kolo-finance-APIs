@@ -2650,7 +2650,7 @@
 									"pm.test(\"Status code name has string\", function () {\r",
 									"    pm.response.to.have.status(\"Bad Request\");\r",
 									"});\r",
-									"pm.test(\"Body matches message\", function () {\r",
+									"pm.test(\"Message\", function () {\r",
 									"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 									"});"
 								],
@@ -2765,7 +2765,7 @@
 									"pm.test(\"Status code name has string\", function () {\r",
 									"    pm.response.to.have.status(\"Bad Request\");\r",
 									"});\r",
-									"pm.test(\"Body matches message\", function () {\r",
+									"pm.test(\"Message\", function () {\r",
 									"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 									"});"
 								],
@@ -2880,7 +2880,7 @@
 									"pm.test(\"Status code name has string\", function () {\r",
 									"    pm.response.to.have.status(\"Bad Request\");\r",
 									"});\r",
-									"pm.test(\"Message matches body\", function () {\r",
+									"pm.test(\"Message\", function () {\r",
 									"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 									"});"
 								],
@@ -3223,7 +3223,7 @@
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.status).to.eql(\"success\");\r",
 											"});\r",
-											"pm.test(\"Body is correct\", function () {\r",
+											"pm.test(\"Data\", function () {\r",
 											"    var jsonData = pm.response.json()\r",
 											"    pm.expect(jsonData.data).to.be.an('array')\r",
 											"})"
@@ -3323,7 +3323,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Not Found\");\r",
 											"});\r",
-											"pm.test(\"Verify that body contains message\", function () {\r",
+											"pm.test(\"Message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});\r",
 											"\r",
@@ -3434,10 +3434,10 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
-											"pm.test(\"Body matches status\", function () {\r",
+											"pm.test(\"Status\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"status\");\r",
 											"});\r",
-											"pm.test(\"Body is correct\", function () {\r",
+											"pm.test(\"Data\", function () {\r",
 											"    var jsonData = pm.response.json()\r",
 											"    pm.expect(jsonData.data).to.be.an('array')\r",
 											"})"
@@ -3543,7 +3543,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Not Found\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});\r",
 											""
@@ -3745,7 +3745,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Bad Request\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});\r",
 											""
@@ -3894,7 +3894,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});"
 										],
@@ -4047,7 +4047,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Not Found\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});\r",
 											"\r",
