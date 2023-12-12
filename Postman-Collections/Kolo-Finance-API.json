@@ -797,7 +797,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Bad Request\");\r",
 											"});\r",
-											"pm.test(\"message\", function () {\r",
+											"pm.test(\"Message\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.message).to.eql(\"Invalid token\");\r",
 											"});"
@@ -913,7 +913,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Bad Request\");\r",
 											"});\r",
-											"pm.test(\"message\", function () {\r",
+											"pm.test(\"Message\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.message).to.eql(\"token is not allowed to be empty\");\r",
 											"});"
