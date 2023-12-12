@@ -4152,7 +4152,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Status\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"status\");\r",
 											"});\r",
 											"pm.test(\"Data\", function () {\r",
@@ -4260,7 +4260,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Bad Request\");\r",
 											"});\r",
-											"pm.test(\"Body matches message\", function () {\r",
+											"pm.test(\"Message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"bank_id is not allowed to be empty\");\r",
 											"});"
 										],
@@ -4375,7 +4375,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Bad Request\");\r",
 											"});\r",
-											"pm.test(\"Body matches message\", function () {\r",
+											"pm.test(\"Message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"account_number length must be 10 characters long\");\r",
 											"});"
 										],
@@ -4490,7 +4490,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Bad Request\");\r",
 											"});\r",
-											"pm.test(\"Body matches message\", function () {\r",
+											"pm.test(\"Message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"account_number length must be 10 characters long\");\r",
 											"});"
 										],
@@ -4727,7 +4727,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Bad Request\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"bank_id is not allowed to be empty\");\r",
 											"});\r",
 											""
@@ -4839,7 +4839,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Bad Request\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"account_number is not allowed to be empty\");\r",
 											"});"
 										],
@@ -5062,7 +5062,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Bad Request\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"account_number length must be 10 characters long\");\r",
 											"});\r",
 											""
@@ -5174,7 +5174,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Bad Request\");\r",
 											"});\r",
-											"pm.test(\"Body matches message\", function () {\r",
+											"pm.test(\"Message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"data_source must be an array\");\r",
 											"});\r",
 											""
