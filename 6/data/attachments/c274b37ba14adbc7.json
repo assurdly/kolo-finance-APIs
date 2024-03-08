@@ -1,0 +1,20 @@
+{
+    "Date": "Fri, 08 Mar 2024 14:54:03 GMT",
+    "Content-Type": "application/json; charset=utf-8",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "X-Powered-By": "Express",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Expose-Headers": "access-token,refresh-token",
+    "access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uX2lkIjoiVTJGc2RHVmtYMStsRHFod2NoWkRnWHJoM25xTDY5cE90djVRNnBHQmJVc05US2RRNmJIdzc5OEJmNm5qZGhwSVQ3L1FUYzgrV1QzWnorakRuTzAyWCtzREc1UWF3YSt2T1VWQ1lVeDhrNk09IiwiaWF0IjoxNzA5OTA5NjQzLCJleHAiOjE3MDk5MTMyNDN9.ugvM5mNN6f2NF4JXpDFqcS2DvzthsMiQxLxxZV3H93w",
+    "refresh-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMzE3IiwiaWF0IjoxNzA5OTA5NjQzLCJleHAiOjE3MTI1MDE2NDN9.wMpTIXEXyG6oPPwU3sivKFkJEu8dDVKiOMTBt8YXfkk",
+    "X-Request-ID": "null",
+    "ETag": "W/\"258-3wEOv71A0LuPcs1JZBH+JUdkJ1w\"",
+    "Age": "0",
+    "Via": "http/1.1 api-umbrella (ApacheTrafficServer [cMsSf ])",
+    "X-Cache": "MISS",
+    "CF-Cache-Status": "DYNAMIC",
+    "Server": "cloudflare",
+    "CF-RAY": "8613a8871b7928c6-IAD",
+    "Content-Encoding": "gzip"
+}

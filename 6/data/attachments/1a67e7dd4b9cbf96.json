@@ -1,0 +1,12 @@
+{
+    "Content-Type": "application/json",
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uX2lkIjoiVTJGc2RHVmtYMStsRHFod2NoWkRnWHJoM25xTDY5cE90djVRNnBHQmJVc05US2RRNmJIdzc5OEJmNm5qZGhwSVQ3L1FUYzgrV1QzWnorakRuTzAyWCtzREc1UWF3YSt2T1VWQ1lVeDhrNk09IiwiaWF0IjoxNzA5OTA5NjQzLCJleHAiOjE3MDk5MTMyNDN9.ugvM5mNN6f2NF4JXpDFqcS2DvzthsMiQxLxxZV3H93w",
+    "User-Agent": "PostmanRuntime/7.36.3",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "e9b34824-68ba-4d2d-a16d-c8694f5af97b",
+    "Host": "vigil.lendsqr.com",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Content-Length": "24"
+}

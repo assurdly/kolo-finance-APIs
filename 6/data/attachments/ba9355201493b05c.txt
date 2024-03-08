@@ -1,0 +1,11 @@
+{
+    "phone_number": "08080604790",
+    "first_name": "Priscaline",
+    "last_name": "Uzo",
+    "street": "Hudson Junctions",
+    "city": "San Leandro",
+    "state": "Lagos",
+    "country": "NGA",
+    "gender": "Male",
+    "dob": "1990-03-04"
+}
