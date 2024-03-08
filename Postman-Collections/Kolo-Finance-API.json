@@ -123,13 +123,13 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
-											"pm.test(\"Status\", function () {\r",
+											"pm.test(\"Verify that response body contains Status\", function () {\r",
 											"    pm.expect(jsonData.status).to.eql(\"success\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Verify that response body contains status\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"status\");\r",
 											"});\r",
-											"pm.test(\"Your test name\", function () {\r",
+											"pm.test(\"Verify that response body contains data\", function () {\r",
 											"    pm.expect(jsonData.data).to.exist;\r",
 											"});\r",
 											"\r",
@@ -227,7 +227,7 @@
 											"pm.test(\"Status code name has string\", function () {",
 											"    pm.response.to.have.status(\"Bad Request\");",
 											"});",
-											"pm.test(\"Message\", function () {",
+											"pm.test(\"Verify that response body contains Message\", function () {",
 											"    pm.expect(pm.response.text()).to.include(\"consented must be a boolean\");",
 											"});",
 											"",
@@ -506,7 +506,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Bad Request\");\r",
 											"});\r",
-											"pm.test(\"Message\", function () {\r",
+											"pm.test(\"Verify that response body contains Message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"code is not allowed to be empty\");\r",
 											"});"
 										],
@@ -647,11 +647,11 @@
 											"pm.test(\"Status code name has string\", function () {",
 											"    pm.response.to.have.status(\"OK\");",
 											"});",
-											"pm.test(\"Status\", function () {",
+											"pm.test(\"Verify that response body contains Status\", function () {",
 											"    var jsonData = pm.response.json();",
 											"    pm.expect(jsonData.status).to.eql(\"success\");",
 											"});",
-											"pm.test(\"Data\", function () {",
+											"pm.test(\"Verify that response body contains data\", function () {",
 											"    pm.expect(pm.response.text()).to.include(\"email\");",
 											"    pm.expect(pm.response.text()).to.include(\"verified\");",
 											"});",
@@ -797,7 +797,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Bad Request\");\r",
 											"});\r",
-											"pm.test(\"message\", function () {\r",
+											"pm.test(\"Verify that response body contains Message\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.message).to.eql(\"Invalid token\");\r",
 											"});"
@@ -913,7 +913,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Bad Request\");\r",
 											"});\r",
-											"pm.test(\"message\", function () {\r",
+											"pm.test(\"Verify that response body contains Message\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.message).to.eql(\"token is not allowed to be empty\");\r",
 											"});"
@@ -1023,12 +1023,12 @@
 										"exec": [
 											"// pm.environment.set('access-token', pm.response.headers.get('access-token'))\r",
 											"\r",
-											"// pm.test(\"Status code is 200\", function () {\r",
-											"//     pm.response.to.have.status(200);\r",
-											"// });\r",
-											"// pm.test(\"Status code name has string\", function () {\r",
-											"//     pm.response.to.have.status(\"OK\");\r",
-											"// });\r",
+											" pm.test(\"Status code is 200\", function () {\r",
+											"     pm.response.to.have.status(200);\r",
+											" });\r",
+											" pm.test(\"Status code name has string\", function () {\r",
+											"     pm.response.to.have.status(\"OK\");\r",
+											" });\r",
 											"// pm.test(\"Verify that body contains status\", function () {\r",
 											"//     pm.expect(pm.response.text()).to.include(\"status\");\r",
 											"// });\r",
@@ -1155,11 +1155,9 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Not Found\");\r",
 											"});\r",
-											"pm.test(\"message\", function () {\r",
-											"    var jsonData = pm.response.json();\r",
-											"    pm.expect(jsonData.message).to.eql(\"Not Found\");\r",
-											"});\r",
-											""
+											"pm.test(\"Verify that response body contains Message\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
+											"});"
 										],
 										"type": "text/javascript"
 									}
@@ -1250,23 +1248,23 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
-											"pm.test(\"Status\", function () {\r",
+											"pm.test(\"Verify that response body contains Status\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.status).to.eql(\"success\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Verify that response body contains Id\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"id\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"phone_number\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"phone_number\");\r",
 											"});\r",
-											"pm.test(\"Body matches email string\", function () {\r",
+											"pm.test(\"email\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"email\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"verified\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"first_name\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"last_name\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"last_name\");\r",
 											"});\r",
 											""
@@ -1366,7 +1364,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
-											"pm.test(\"Your test name\", function () {\r",
+											"pm.test(\"Verify that response body contains data\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.data).to.exist;\r",
 											"});"
@@ -1478,10 +1476,10 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
-											"pm.test(\"Verify that body contains status\", function () {\r",
+											"pm.test(\"Verify that response body contains status\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"status\");\r",
 											"});\r",
-											"pm.test(\"Your test name\", function () {\r",
+											"pm.test(\"Verify that response body contains data\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.data).to.exist;\r",
 											"});\r",
@@ -1599,7 +1597,7 @@
 											"pm.test(\"Verify that response body contains status\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"status\");\r",
 											"});\r",
-											"pm.test(\"Your test name\", function () {\r",
+											"pm.test(\"Verify that response body contains data\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.data).to.exist;\r",
 											"});\r",
@@ -1715,7 +1713,7 @@
 											"pm.test(\"Verify that response body contains status\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"status\");\r",
 											"});\r",
-											"pm.test(\"Your test name\", function () {\r",
+											"pm.test(\"Verify that response body contains data\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.data).to.exist;\r",
 											"});\r",
@@ -1829,10 +1827,10 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
-											"pm.test(\"Verify that response body contains status\", function () {\r",
+											"pm.test(\"Verify that response body contains ctatus\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"status\");\r",
 											"});\r",
-											"pm.test(\"Your test name\", function () {\r",
+											"pm.test(\"Verify that response body contains data\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.data).to.exist;\r",
 											"});"
@@ -1947,7 +1945,7 @@
 											"pm.test(\"Verify that response body contains status\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"status\");\r",
 											"});\r",
-											"pm.test(\"Your test name\", function () {\r",
+											"pm.test(\"Verify that response body contains data\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.data).to.exist;\r",
 											"});"
@@ -2062,7 +2060,7 @@
 											"pm.test(\"Verify that response body contains status\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"status\");\r",
 											"});\r",
-											"pm.test(\"Your test name\", function () {\r",
+											"pm.test(\"Verify that response body contains data\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.data).to.exist;\r",
 											"});"
@@ -2177,7 +2175,7 @@
 											"pm.test(\"Verify that response body contains status\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"status\");\r",
 											"});\r",
-											"pm.test(\"Your test name\", function () {\r",
+											"pm.test(\"Verify that response body contains data\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.data).to.exist;\r",
 											"});"
@@ -2292,7 +2290,7 @@
 											"pm.test(\"Verify that response body contains status\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"status\");\r",
 											"});\r",
-											"pm.test(\"Your test name\", function () {\r",
+											"pm.test(\"Verify that response body contains data\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.data).to.exist;\r",
 											"});\r",
@@ -2415,7 +2413,7 @@
 									"pm.test(\"Status code name has string\", function () {\r",
 									"    pm.response.to.have.status(\"Bad Request\");\r",
 									"});\r",
-									"pm.test(\"Body matches message\", function () {\r",
+									"pm.test(\"mVerify that response body contains message\", function () {\r",
 									"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 									"});"
 								],
@@ -2530,7 +2528,7 @@
 									"pm.test(\"Status code name has string\", function () {\r",
 									"    pm.response.to.have.status(\"OK\");\r",
 									"});\r",
-									"pm.test(\"Status matches string\", function () {\r",
+									"pm.test(\"Status \", function () {\r",
 									"    pm.expect(pm.response.text()).to.include(\"status\");\r",
 									"});\r",
 									""
@@ -2652,7 +2650,7 @@
 									"pm.test(\"Status code name has string\", function () {\r",
 									"    pm.response.to.have.status(\"Bad Request\");\r",
 									"});\r",
-									"pm.test(\"Body matches message\", function () {\r",
+									"pm.test(\"mVerify that response body contains message\", function () {\r",
 									"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 									"});"
 								],
@@ -2767,7 +2765,7 @@
 									"pm.test(\"Status code name has string\", function () {\r",
 									"    pm.response.to.have.status(\"Bad Request\");\r",
 									"});\r",
-									"pm.test(\"Body matches message\", function () {\r",
+									"pm.test(\"Verify that response body contains message\", function () {\r",
 									"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 									"});"
 								],
@@ -2882,7 +2880,7 @@
 									"pm.test(\"Status code name has string\", function () {\r",
 									"    pm.response.to.have.status(\"Bad Request\");\r",
 									"});\r",
-									"pm.test(\"Message matches body\", function () {\r",
+									"pm.test(\"Verify that response body contains message\", function () {\r",
 									"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 									"});"
 								],
@@ -2997,7 +2995,7 @@
 									"pm.test(\"Status code name has string\", function () {\r",
 									"    pm.response.to.have.status(\"OK\");\r",
 									"});\r",
-									"pm.test(\"Status\", function () {\r",
+									"pm.test(\"Verify that response body contains status\", function () {\r",
 									"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 									"});"
 								],
@@ -3121,7 +3119,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Not Found\");\r",
 											"});\r",
-											"pm.test(\"Message\", function () {\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.message).to.eql(\"Not Found\");\r",
 											"});\r",
@@ -3221,11 +3219,11 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
-											"pm.test(\"Status\", function () {\r",
+											"pm.test(\"Verify that response body contains status\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.status).to.eql(\"success\");\r",
 											"});\r",
-											"pm.test(\"Body is correct\", function () {\r",
+											"pm.test(\"Data\", function () {\r",
 											"    var jsonData = pm.response.json()\r",
 											"    pm.expect(jsonData.data).to.be.an('array')\r",
 											"})"
@@ -3325,7 +3323,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Not Found\");\r",
 											"});\r",
-											"pm.test(\"Verify that body contains message\", function () {\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});\r",
 											"\r",
@@ -3436,10 +3434,10 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
-											"pm.test(\"Body matches status\", function () {\r",
+											"pm.test(\"Verify that response body contains status\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"status\");\r",
 											"});\r",
-											"pm.test(\"Body is correct\", function () {\r",
+											"pm.test(\"Verify that response body contains data\", function () {\r",
 											"    var jsonData = pm.response.json()\r",
 											"    pm.expect(jsonData.data).to.be.an('array')\r",
 											"})"
@@ -3545,7 +3543,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Not Found\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});\r",
 											""
@@ -3643,7 +3641,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
-											"pm.test(\"Data\", function () {\r",
+											"pm.test(\"Verify that response body contains data\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.data).to.be.an(\"array\");\r",
 											"});"
@@ -3747,7 +3745,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Bad Request\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});\r",
 											""
@@ -3896,7 +3894,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});"
 										],
@@ -4049,7 +4047,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Not Found\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});\r",
 											"\r",
@@ -4154,10 +4152,10 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Verify that response body contains status\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"status\");\r",
 											"});\r",
-											"pm.test(\"Data\", function () {\r",
+											"pm.test(\"Verify that response body contains data\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.data).to.be.an(\"array\");\r",
 											"});\r",
@@ -4262,7 +4260,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Bad Request\");\r",
 											"});\r",
-											"pm.test(\"Body matches message\", function () {\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"bank_id is not allowed to be empty\");\r",
 											"});"
 										],
@@ -4377,7 +4375,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Bad Request\");\r",
 											"});\r",
-											"pm.test(\"Body matches message\", function () {\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"account_number length must be 10 characters long\");\r",
 											"});"
 										],
@@ -4492,7 +4490,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Bad Request\");\r",
 											"});\r",
-											"pm.test(\"Body matches message\", function () {\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"account_number length must be 10 characters long\");\r",
 											"});"
 										],
@@ -4607,7 +4605,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
-											"pm.test(\"Status\", function () {\r",
+											"pm.test(\"Verify that response body contains status\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.status).to.eql(\"success\");\r",
 											"});"
@@ -4729,7 +4727,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Bad Request\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"bank_id is not allowed to be empty\");\r",
 											"});\r",
 											""
@@ -4841,7 +4839,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Bad Request\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"account_number is not allowed to be empty\");\r",
 											"});"
 										],
@@ -4952,7 +4950,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Bad Request\");\r",
 											"});\r",
-											"pm.test(\"Message\", function () {\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.message).to.eql(\"account_number length must be 10 characters long\");\r",
 											"});"
@@ -5064,7 +5062,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Bad Request\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"account_number length must be 10 characters long\");\r",
 											"});\r",
 											""
@@ -5176,7 +5174,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Bad Request\");\r",
 											"});\r",
-											"pm.test(\"Body matches message\", function () {\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"data_source must be an array\");\r",
 											"});\r",
 											""
@@ -5292,7 +5290,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Bad Request\");\r",
 											"});\r",
-											"pm.test(\"Body matches message\", function () {\r",
+											"pm.test(\"Verify that response body contains  message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"description is not allowed to be empty\");\r",
 											"});\r",
 											""
@@ -5417,7 +5415,7 @@
 											"const responseData = pm.response.json();\r",
 											"pm.expect(responseData.data.account_number).to.be.a('string').and.to.have.lengthOf(10, \"value should not be empty\")\r",
 											"});\r",
-											"pm.test(\"Your test name\", function () {\r",
+											"pm.test(\"Verify that response body contains data\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.data).to.exist;\r",
 											"});\r",
@@ -5534,7 +5532,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Bad Request\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});\r",
 											""
@@ -5558,7 +5556,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"bank_id\": \"{{accessbankId}}\",\n    \"account_number\": \"0029846969\",\n      \"data_source\": [\"email\",\"sms\"],\n    \"description\": \"This is my savings account\"\n}",
+									"raw": "{\n    \"bank_id\": \"{{accessbankId}}\",\n    \"account_number\": \"0008854010\",\n      \"data_source\": [\"email\",\"sms\"],\n    \"description\": \"This is my savings account\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5656,7 +5654,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Not Found\");\r",
 											"});\r",
-											"pm.test(\"Verify that body contains message\", function () {\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});\r",
 											""
@@ -5761,11 +5759,11 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
-											"pm.test(\"Status\", function () {\r",
+											"pm.test(\"Verify that response body contains status\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.status).to.eql(\"success\");\r",
 											"});\r",
-											"pm.test(\"Body is correct\", function () {\r",
+											"pm.test(\"Verify that response body contains data\", function () {\r",
 											"    var jsonData = pm.response.json()\r",
 											"    pm.expect(jsonData.data).to.be.an('array')\r",
 											"})"
@@ -5865,7 +5863,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Not Found\");\r",
 											"});\r",
-											"pm.test(\"Body matches message\", function () {\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});"
 										],
@@ -5992,7 +5990,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Not Found\");\r",
 											"});\r",
-											"pm.test(\"Body matches message\", function () {\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});"
 										],
@@ -6119,10 +6117,10 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
-											"pm.test(\"Body matches status\", function () {\r",
+											"pm.test(\"Verify that response body contains status\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"status\");\r",
 											"});\r",
-											"pm.test(\"Your test name\", function () {\r",
+											"pm.test(\"Verify that response body contains data\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.data).to.exist;\r",
 											"});\r",
@@ -6258,7 +6256,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Bad Request\");\r",
 											"});\r",
-											"pm.test(\"Body contains message\", function () {\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});"
 										],
@@ -6403,7 +6401,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Bad Request\");\r",
 											"});\r",
-											"pm.test(\"Body contains data\", function () {\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"account_number is not allowed to be empty\");\r",
 											"});"
 										],
@@ -6548,7 +6546,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
-											"pm.test(\"Body contains data\", function () {\r",
+											"pm.test(\"Verify that response body contains data\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"data\");\r",
 											"});"
 										],
@@ -6699,7 +6697,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Not Found\");\r",
 											"});\r",
-											"pm.test(\"Body matches message\", function () {\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});"
 										],
@@ -6796,10 +6794,10 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Verify that response body contains status\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"status\");\r",
 											"});\r",
-											"pm.test(\"Your test name\", function () {\r",
+											"pm.test(\"Verify that response body contains data\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.data).to.exist;\r",
 											"});"
@@ -6903,7 +6901,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Not Found\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});"
 										],
@@ -6959,7 +6957,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});\r",
 											""
@@ -7021,7 +7019,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Not Found\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});\r",
 											""
@@ -7119,7 +7117,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Verify that response body contains status\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"status\");\r",
 											"});\r",
 											""
@@ -7229,7 +7227,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Not Found\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});"
 										],
@@ -7340,7 +7338,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Created\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Verify that response body contains status\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"status\");\r",
 											"});"
 										],
@@ -7473,7 +7471,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
-											"pm.test(\"Status\", function () {\r",
+											"pm.test(\"Verify that response body contains status\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.status).to.eql(\"success\");\r",
 											"});\r",
@@ -9434,7 +9432,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Not Found\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});\r",
 											""
@@ -9558,7 +9556,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Not Found\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});"
 										],
@@ -9682,10 +9680,10 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Verify that response body contains status\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"status\");\r",
 											"});\r",
-											"pm.test(\"data\", function () {\r",
+											"pm.test(\"Verify that response body contains data\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.data).to.exist;\r",
 											"});\r",
@@ -9828,10 +9826,10 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Verify that response body contains status\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"status\");\r",
 											"});\r",
-											"pm.test(\"Your test name\", function () {\r",
+											"pm.test(\"Verify that response body contains data\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.data).to.exist;\r",
 											"});\r",
@@ -9974,11 +9972,11 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
-											"pm.test(\"status\", function () {\r",
+											"pm.test(\"Verify that response body contains status\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.status).to.eql(\"success\");\r",
 											"});\r",
-											"pm.test(\"Your test name\", function () {\r",
+											"pm.test(\"Verify that response body contains data\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.data).to.exist;\r",
 											"});\r",
@@ -10122,10 +10120,10 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Verify that response body contains status\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"status\");\r",
 											"});\r",
-											"pm.test(\"Your test name\", function () {\r",
+											"pm.test(\"Verify that response body contains data\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.data).to.exist;\r",
 											"});\r",
@@ -10268,7 +10266,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Not Found\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});\r",
 											"\r",
@@ -10415,7 +10413,7 @@
 											"pm.test(\"Body matches string\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"status\");\r",
 											"});\r",
-											"pm.test(\"Your test name\", function () {\r",
+											"pm.test(\"Verify that response body contains data\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.data).to.exist;\r",
 											"});\r",
@@ -10564,7 +10562,7 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Not Found\");\r",
 											"});\r",
-											"pm.test(\"message\", function () {\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"message\")\r",
 											"});\r",
 											""
@@ -10620,10 +10618,10 @@
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
-											"pm.test(\"Body includes status\", function () {\r",
+											"pm.test(\"Verify that response body contains  status\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"status\");\r",
 											"});\r",
-											"pm.test(\"Your test name\", function () {\r",
+											"pm.test(\"Verify that response body contains data\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.data).to.exist;\r",
 											"});\r",
@@ -10756,56 +10754,152 @@
 			"name": "Notifications",
 			"item": [
 				{
-					"name": "Persist Notification Token Without Token",
-					"event": [
+					"name": "Persist Notification",
+					"item": [
 						{
-							"listen": "test",
-							"script": {
-								"id": "8038be31-792d-471b-845e-5d7d936a231c",
-								"exec": [
-									"pm.test(\"Status code is 400\", function () {\r",
-									"    pm.response.to.have.status(400);\r",
-									"});\r",
-									"pm.test(\"Status code name has string\", function () {\r",
-									"    pm.response.to.have.status(\"Bad Request\");\r",
-									"});\r",
-									"pm.test(\"Body matches string\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"message\");\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "66cce5b8-629f-414b-afb9-2af82a2e0312",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{access-token}}"
-							}
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"token\": \"\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+							"name": "Persist Notification Token Without Token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8038be31-792d-471b-845e-5d7d936a231c",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"Bad Request\");\r",
+											"});\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
 								}
-							}
+							],
+							"id": "66cce5b8-629f-414b-afb9-2af82a2e0312",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{access-token}}"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"token\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/notifications"
+							},
+							"response": [
+								{
+									"id": "395c6b46-c7da-4a5d-a311-66f52d077e54",
+									"name": "Persist Notification Token",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"token\": \"token\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/notifications"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "X-Request-ID",
+											"value": "null"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "61"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3d-HqYVLIQdcRBq3lKKLva3ZJ6NKAA\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 18 Oct 2023 10:41:43 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"Successfully updated firebase token\",\n    \"data\": null\n}"
+								}
+							]
 						},
-						"url": "{{base_url}}/notifications"
-					},
-					"response": [
 						{
-							"id": "395c6b46-c7da-4a5d-a311-66f52d077e54",
 							"name": "Persist Notification Token",
-							"originalRequest": {
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8038be31-792d-471b-845e-5d7d936a231c",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "ad2453d8-7a1c-4b48-a60e-055c3e4f64cb",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{access-token}}"
+									}
+								},
 								"method": "PUT",
 								"header": [],
 								"body": {
@@ -10819,361 +10913,277 @@
 								},
 								"url": "{{base_url}}/notifications"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "X-Request-ID",
-									"value": "null"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "61"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"3d-HqYVLIQdcRBq3lKKLva3ZJ6NKAA\""
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 18 Oct 2023 10:41:43 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"id": "c51207f7-7207-4b5b-9c36-d805917a0571",
+									"name": "Persist Notification Token",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"token\": \"token\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/notifications"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "X-Request-ID",
+											"value": "null"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "61"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3d-HqYVLIQdcRBq3lKKLva3ZJ6NKAA\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 18 Oct 2023 10:41:43 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"Successfully updated firebase token\",\n    \"data\": null\n}"
 								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"message\": \"Successfully updated firebase token\",\n    \"data\": null\n}"
-						}
-					]
-				},
-				{
-					"name": "Persist Notification Token",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "8038be31-792d-471b-845e-5d7d936a231c",
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"pm.test(\"Status code name has string\", function () {\r",
-									"    pm.response.to.have.status(\"OK\");\r",
-									"});\r",
-									"pm.test(\"Body matches string\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"message\");\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
+							]
 						}
 					],
-					"id": "ad2453d8-7a1c-4b48-a60e-055c3e4f64cb",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{access-token}}"
-							}
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"token\": \"token\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{base_url}}/notifications"
-					},
-					"response": [
+					"id": "71587b01-ad4a-4ec1-8b9d-f386c4a620ec"
+				},
+				{
+					"name": "Get Notification",
+					"item": [
 						{
-							"id": "c51207f7-7207-4b5b-9c36-d805917a0571",
-							"name": "Persist Notification Token",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"token\": \"token\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
+							"name": "Get Notifications With Invalid Endpoint",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "fa42fe5c-f06f-4b0d-b0f5-11b0f9383de4",
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {\r",
+											"    pm.response.to.have.status(404);\r",
+											"});\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"Not Found\");\r",
+											"});\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "4a8ff0d0-f2f3-4b02-abb7-265499fab787",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{access-token}}"
 									}
 								},
-								"url": "{{base_url}}/notifications"
+								"method": "GET",
+								"header": [],
+								"url": "{{base_url}}/notificatio"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
+									"id": "633f4e7a-489c-4629-9c51-02096af1148b",
+									"name": "Get Notifications",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{base_url}}/notifications"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Expose-Headers",
+											"value": "access-token"
+										},
+										{
+											"key": "X-Request-ID",
+											"value": "null"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "254"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"fe-YIYZADB0+DUdeLvhBdHLeCwTFyA\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 24 Oct 2023 11:42:01 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": null,\n            \"device_id\": null,\n            \"title\": \"Welcome to Kolo\",\n            \"body\": \"Welcome to Kolo\",\n            \"created_on\": \"2023-10-24T10:37:33.841Z\",\n            \"created_by\": null,\n            \"modified_on\": null,\n            \"modified_by\": null,\n            \"deleted_on\": null,\n            \"deleted_by\": null\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Notifications",
+							"event": [
 								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "X-Request-ID",
-									"value": "null"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "61"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"3d-HqYVLIQdcRBq3lKKLva3ZJ6NKAA\""
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 18 Oct 2023 10:41:43 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"listen": "test",
+									"script": {
+										"id": "57f02c11-2d72-47be-87df-eca0dcb9e10c",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
+											"});\r",
+											"pm.test(\"Verify that response body contains data\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.data).to.be.an(\"array\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
 								}
 							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"message\": \"Successfully updated firebase token\",\n    \"data\": null\n}"
-						}
-					]
-				},
-				{
-					"name": "Get Notifications With Invalid Endpoint",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "fa42fe5c-f06f-4b0d-b0f5-11b0f9383de4",
-								"exec": [
-									"pm.test(\"Status code is 404\", function () {\r",
-									"    pm.response.to.have.status(404);\r",
-									"});\r",
-									"pm.test(\"Status code name has string\", function () {\r",
-									"    pm.response.to.have.status(\"Not Found\");\r",
-									"});\r",
-									"pm.test(\"Body matches string\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"message\");\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "4a8ff0d0-f2f3-4b02-abb7-265499fab787",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{access-token}}"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{base_url}}/notificatio"
-					},
-					"response": [
-						{
-							"id": "633f4e7a-489c-4629-9c51-02096af1148b",
-							"name": "Get Notifications",
-							"originalRequest": {
+							"id": "ea179b73-0379-43a5-b002-b245fcb2d457",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{access-token}}"
+									}
+								},
 								"method": "GET",
 								"header": [],
 								"url": "{{base_url}}/notifications"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Expose-Headers",
-									"value": "access-token"
-								},
-								{
-									"key": "X-Request-ID",
-									"value": "null"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "254"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"fe-YIYZADB0+DUdeLvhBdHLeCwTFyA\""
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 24 Oct 2023 11:42:01 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"id": "a008f1ba-c615-47ff-8820-4425e1c3c7f2",
+									"name": "Get Notifications",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{base_url}}/notifications"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Expose-Headers",
+											"value": "access-token"
+										},
+										{
+											"key": "X-Request-ID",
+											"value": "null"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "254"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"fe-YIYZADB0+DUdeLvhBdHLeCwTFyA\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 24 Oct 2023 11:42:01 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": null,\n            \"device_id\": null,\n            \"title\": \"Welcome to Kolo\",\n            \"body\": \"Welcome to Kolo\",\n            \"created_on\": \"2023-10-24T10:37:33.841Z\",\n            \"created_by\": null,\n            \"modified_on\": null,\n            \"modified_by\": null,\n            \"deleted_on\": null,\n            \"deleted_by\": null\n        }\n    ]\n}"
 								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": null,\n            \"device_id\": null,\n            \"title\": \"Welcome to Kolo\",\n            \"body\": \"Welcome to Kolo\",\n            \"created_on\": \"2023-10-24T10:37:33.841Z\",\n            \"created_by\": null,\n            \"modified_on\": null,\n            \"modified_by\": null,\n            \"deleted_on\": null,\n            \"deleted_by\": null\n        }\n    ]\n}"
-						}
-					]
-				},
-				{
-					"name": "Get Notifications",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "57f02c11-2d72-47be-87df-eca0dcb9e10c",
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"pm.test(\"Status code name has string\", function () {\r",
-									"    pm.response.to.have.status(\"OK\");\r",
-									"});\r",
-									"pm.test(\"Body matches string\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"message\");\r",
-									"});\r",
-									"pm.test(\"Data\", function () {\r",
-									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.data).to.be.an(\"array\");\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
+							]
 						}
 					],
-					"id": "ea179b73-0379-43a5-b002-b245fcb2d457",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{access-token}}"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{base_url}}/notifications"
-					},
-					"response": [
-						{
-							"id": "a008f1ba-c615-47ff-8820-4425e1c3c7f2",
-							"name": "Get Notifications",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": "{{base_url}}/notifications"
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Expose-Headers",
-									"value": "access-token"
-								},
-								{
-									"key": "X-Request-ID",
-									"value": "null"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "254"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"fe-YIYZADB0+DUdeLvhBdHLeCwTFyA\""
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 24 Oct 2023 11:42:01 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": null,\n            \"device_id\": null,\n            \"title\": \"Welcome to Kolo\",\n            \"body\": \"Welcome to Kolo\",\n            \"created_on\": \"2023-10-24T10:37:33.841Z\",\n            \"created_by\": null,\n            \"modified_on\": null,\n            \"modified_by\": null,\n            \"deleted_on\": null,\n            \"deleted_by\": null\n        }\n    ]\n}"
-						}
-					]
+					"id": "6fd5d12e-0585-46b1-89b3-b873fb81a14e"
 				}
 			],
 			"id": "3d464929-6788-494e-85ee-9c39431e40f7"
@@ -11592,7 +11602,7 @@
 									"pm.test(\"Status code name has string\", function () {\r",
 									"    pm.response.to.have.status(\"Not Found\");\r",
 									"});\r",
-									"pm.test(\"Body matches string\", function () {\r",
+									"pm.test(\"Verify that response body contains message\", function () {\r",
 									"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 									"});"
 								],
@@ -11693,7 +11703,7 @@
 									"pm.test(\"Status code name has string\", function () {\r",
 									"    pm.response.to.have.status(\"OK\");\r",
 									"});\r",
-									"pm.test(\"Body matches string\", function () {\r",
+									"pm.test(\"Verify that response body contains status\", function () {\r",
 									"    pm.expect(pm.response.text()).to.include(\"status\");\r",
 									"});"
 								],
@@ -11797,11 +11807,11 @@
 									"pm.test(\"Status code name has string\", function () {",
 									"    pm.response.to.have.status(\"OK\");",
 									"});",
-									"pm.test(\"Status\", function () {",
+									"pm.test(\"Verify that response body contains status\", function () {",
 									"    var jsonData = pm.response.json();",
 									"    pm.expect(jsonData.status).to.eql(\"success\");",
 									"});",
-									"pm.test(\"Data\", function () {",
+									"pm.test(\"Verify that response body contains data\", function () {",
 									"    pm.expect(pm.response.text()).to.include(\"email\");",
 									"    pm.expect(pm.response.text()).to.include(\"verified\");",
 									"});",
@@ -12051,7 +12061,7 @@
 									"pm.test(\"Status code name has string\", function () {\r",
 									"    pm.response.to.have.status(\"OK\");\r",
 									"});\r",
-									"pm.test(\"Body matches string\", function () {\r",
+									"pm.test(\"Verify that response body contains status\", function () {\r",
 									"    pm.expect(pm.response.text()).to.include(\"status\");\r",
 									"});\r",
 									""
