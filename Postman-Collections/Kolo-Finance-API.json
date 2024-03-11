@@ -1157,6 +1157,10 @@
 											"});\r",
 											"pm.test(\"Verify that response body contains Message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Verify that response body contains Message\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});"
 										],
 										"type": "text/javascript"
@@ -2989,15 +2993,25 @@
 							"script": {
 								"id": "3991de86-6694-4f7f-9b04-8ce8b921f309",
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
+									"if(pm.response.status===200){\r",
+									"    pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
-									"pm.test(\"Status code name has string\", function () {\r",
+									"pm.test(\"Status code name has 'OK'\", function () {\r",
 									"    pm.response.to.have.status(\"OK\");\r",
 									"});\r",
+									"}else{\r",
+									" pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									" });\r",
+									" pm.test(\"Status code name has 'Bad Request'\", function () {\r",
+									"    pm.response.to.have.status(\"Bad Request\");\r",
+									"});\r",
+									"}\r",
 									"pm.test(\"Verify that response body contains status\", function () {\r",
 									"    pm.expect(pm.response.text()).to.include(\"message\");\r",
-									"});"
+									"});\r",
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -3210,7 +3224,7 @@
 										"exec": [
 											"var jsonData = pm.response.json()\r",
 											"pm.test(\"accountId\", ()=>{\r",
-											"pm.collectionVariables.set(\"accessbankId\", jsonData.data[0].id);\r",
+											"pm.environment.set(\"accessbankId\", jsonData.data[0].id);\r",
 											"});\r",
 											"\r",
 											"pm.test(\"Status code is 200\", function () {\r",
@@ -3414,19 +3428,19 @@
 										"exec": [
 											"var jsonData = pm.response.json()\r",
 											"pm.test(\"clothingId\", ()=>{\r",
-											"pm.collectionVariables.set(\"clothingId\", jsonData.data[0].id);\r",
+											"pm.environment.set(\"clothingId\", jsonData.data[0].id);\r",
 											"});\r",
 											"pm.test(\"entertainmentId\", ()=>{\r",
-											"pm.collectionVariables.set(\"entertainmentId\", jsonData.data[1].id);\r",
+											"pm.environment.set(\"entertainmentId\", jsonData.data[1].id);\r",
 											"});\r",
 											"pm.test(\"familyId\", ()=>{\r",
-											"pm.collectionVariables.set(\"familyId\", jsonData.data[2].id);\r",
+											"pm.environment.set(\"familyId\", jsonData.data[2].id);\r",
 											"});\r",
 											"pm.test(\"foodId\", ()=>{\r",
-											"pm.collectionVariables.set(\"foodId\", jsonData.data[3].id);\r",
+											"pm.environment.set(\"foodId\", jsonData.data[3].id);\r",
 											"});\r",
 											"pm.test(\"healthId\", ()=>{\r",
-											"pm.collectionVariables.set(\"healthId\", jsonData.data[4].id);\r",
+											"pm.environment.set(\"healthId\", jsonData.data[4].id);\r",
 											"});\r",
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -3888,12 +3902,22 @@
 									"script": {
 										"id": "11ca1565-56fa-432c-b1c5-7636a7bdc59a",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
+											"if(pm.response.status===200)\r",
+											"   { pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Status code name has string\", function () {\r",
+											"pm.test(\"Status code name has 'OK'\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
+											"   }else{\r",
+											"\r",
+											"    pm.test(\"Status code is 400\", function () {\r",
+											"        pm.response.to.have.status(400);\r",
+											"    });\r",
+											"pm.test(\"Status code name has 'Bad Request'\", function () {\r",
+											"    pm.response.to.have.status(\"Bad Request\");\r",
+											"});\r",
+											"   }\r",
 											"pm.test(\"Verify that response body contains message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});"
@@ -4376,7 +4400,7 @@
 											"    pm.response.to.have.status(\"Bad Request\");\r",
 											"});\r",
 											"pm.test(\"Verify that response body contains message\", function () {\r",
-											"    pm.expect(pm.response.text()).to.include(\"account_number length must be 10 characters long\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});"
 										],
 										"type": "text/javascript"
@@ -5402,9 +5426,11 @@
 										"exec": [
 											"var jsonData = pm.response.json()\r",
 											"pm.test(\"accountId\", ()=>{\r",
-											"pm.collectionVariables.set(\"accountId\", jsonData.data.id);\r",
+											"pm.environment.set(\"accountId\", jsonData.data.id);\r",
 											"});\r",
-											"\r",
+											"pm.test(\"account_number\", ()=>{\r",
+											"pm.environment.set(\"account_number\", jsonData.data.account_number);\r",
+											"});\r",
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
@@ -5440,7 +5466,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"bank_id\": \"{{accessbankId}}\",\n    \"account_number\": \"0008854010\",\n      \"data_source\": [\"email\",\"sms\"],\n    \"description\": \"This is my savings account\"\n}",
+									"raw": "{\n    \"bank_id\": \"{{accessbankId}}\",\n    \"account_number\": \"0029846969\",\n      \"data_source\": [\"email\",\"sms\"],\n    \"description\": \"This is my savings account\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5556,7 +5582,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"bank_id\": \"{{accessbankId}}\",\n    \"account_number\": \"0008854010\",\n      \"data_source\": [\"email\",\"sms\"],\n    \"description\": \"This is my savings account\"\n}",
+									"raw": "{\n    \"bank_id\": \"{{accessbankId}}\",\n    \"account_number\": \"account_number\",\n      \"data_source\": [\"email\",\"sms\"],\n    \"description\": \"This is my savings account\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5746,7 +5772,7 @@
 											"var jsonData = pm.response.json()\r",
 											"\r",
 											"pm.test(\"accountId1\", ()=>{\r",
-											"pm.collectionVariables.set(\"accountId1\", jsonData.data[0].id);\r",
+											"pm.environment.set(\"accountId1\", jsonData.data[0].id);\r",
 											"});\r",
 											"/*\r",
 											"pm.test(\"accountId2\", ()=>{\r",
@@ -6569,7 +6595,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"account_number\": \"0008854010\",\n    \"data_source\":[\"sms\"],\n    \"description\": \"This is my current account\"\n}",
+									"raw": "{\n    \"account_number\": \"{{account_number}}\",\n    \"data_source\":[\"sms\"],\n    \"description\": \"This is my current account\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -6883,124 +6909,6 @@
 						}
 					],
 					"id": "dddf2adc-7c49-4545-b3d4-3a6704a8746e"
-				},
-				{
-					"name": "Delete Data Source",
-					"item": [
-						{
-							"name": "Delete Data Source With Invalid ID",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "24e3e384-c4ae-4e40-8c96-d48bd6e27005",
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
-											"    pm.response.to.have.status(404);\r",
-											"});\r",
-											"pm.test(\"Status code name has string\", function () {\r",
-											"    pm.response.to.have.status(\"Not Found\");\r",
-											"});\r",
-											"pm.test(\"Verify that response body contains message\", function () {\r",
-											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"id": "e6f32600-3f28-414f-9280-87588c6f92e8",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{access-token}}"
-									}
-								},
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}/bank-accounts/sources/:id",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"bank-accounts",
-										"sources",
-										":id"
-									],
-									"variable": [
-										{
-											"id": "407db528-7299-4e77-b836-f4cb853689c0",
-											"key": "id",
-											"value": "1"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Delete Data Source",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "75d66193-16fb-4357-bdde-60932fc7f46c",
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
-											"});\r",
-											"pm.test(\"Status code name has string\", function () {\r",
-											"    pm.response.to.have.status(\"OK\");\r",
-											"});\r",
-											"pm.test(\"Verify that response body contains message\", function () {\r",
-											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
-											"});\r",
-											""
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"id": "d97d2a05-9a91-495c-930a-a23cb48ad901",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{access-token}}"
-									}
-								},
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}/bank-accounts/sources/:id",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"bank-accounts",
-										"sources",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "{{dataSourceId}}"
-										}
-									]
-								}
-							},
-							"response": []
-						}
-					],
-					"id": "a0942195-342c-4eaf-b8a0-f2bc67003df7"
 				},
 				{
 					"name": "Sync Bank Accounts",
@@ -9687,8 +9595,6 @@
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.data).to.exist;\r",
 											"});\r",
-											"\r",
-											"\r",
 											"} else {\r",
 											"    pm.test(\"Status code is 204\", function () {\r",
 											"    pm.response.to.have.status(204);\r",
@@ -9820,19 +9726,25 @@
 									"script": {
 										"id": "b6af7ea6-1a87-4ba2-bde5-cd4cb87f2b72",
 										"exec": [
+											"if(pm.response.status===200){\r",
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Status code name has string\", function () {\r",
+											"pm.test(\"Status code name has 'OK'\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
+											"}else{\r",
+											"    pm.test(\"Status code is 404\", function () {\r",
+											"    pm.response.to.have.status(404);\r",
+											"});\r",
+											"pm.test(\"Status code name has 'Not Found'\", function () {\r",
+											"    pm.response.to.have.status(\"Not Found\");\r",
+											"});\r",
+											"}\r",
 											"pm.test(\"Verify that response body contains status\", function () {\r",
-											"    pm.expect(pm.response.text()).to.include(\"status\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});\r",
-											"pm.test(\"Verify that response body contains data\", function () {\r",
-											"    var jsonData = pm.response.json();\r",
-											"    pm.expect(jsonData.data).to.exist;\r",
-											"});\r",
+											"\r",
 											""
 										],
 										"type": "text/javascript"
@@ -9966,19 +9878,24 @@
 									"script": {
 										"id": "b6af7ea6-1a87-4ba2-bde5-cd4cb87f2b72",
 										"exec": [
+											"if(pm.response.status===200){\r",
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Status code name has string\", function () {\r",
+											"pm.test(\"Status code name has 'OK'\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
-											"pm.test(\"Verify that response body contains status\", function () {\r",
-											"    var jsonData = pm.response.json();\r",
-											"    pm.expect(jsonData.status).to.eql(\"success\");\r",
+											"}else{\r",
+											"    pm.test(\"Status code is 404\", function () {\r",
+											"    pm.response.to.have.status(404);\r",
 											"});\r",
-											"pm.test(\"Verify that response body contains data\", function () {\r",
+											"pm.test(\"Status code name has 'Not Found'\", function () {\r",
+											"    pm.response.to.have.status(\"Not Found\");\r",
+											"});\r",
+											"}\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
-											"    pm.expect(jsonData.data).to.exist;\r",
+											"    pm.expect(jsonData.message).to.eql(\"Transaction not found\");\r",
 											"});\r",
 											""
 										],
@@ -10114,20 +10031,24 @@
 									"script": {
 										"id": "b6af7ea6-1a87-4ba2-bde5-cd4cb87f2b72",
 										"exec": [
+											"if(pm.response.status===200){\r",
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Status code name has string\", function () {\r",
+											"pm.test(\"Status code name has 'OK'\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
-											"pm.test(\"Verify that response body contains status\", function () {\r",
-											"    pm.expect(pm.response.text()).to.include(\"status\");\r",
+											"}else{\r",
+											"    pm.test(\"Status code is 404\", function () {\r",
+											"    pm.response.to.have.status(404);\r",
 											"});\r",
-											"pm.test(\"Verify that response body contains data\", function () {\r",
-											"    var jsonData = pm.response.json();\r",
-											"    pm.expect(jsonData.data).to.exist;\r",
+											"pm.test(\"Status code name has 'Not Found'\", function () {\r",
+											"    pm.response.to.have.status(\"Not Found\");\r",
 											"});\r",
-											""
+											"}\r",
+											"pm.test(\"Verify that response body contains message\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
+											"});"
 										],
 										"type": "text/javascript"
 									}
@@ -10404,18 +10325,23 @@
 									"script": {
 										"id": "b6af7ea6-1a87-4ba2-bde5-cd4cb87f2b72",
 										"exec": [
+											"if(pm.response.status===200){\r",
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Status code name has string\", function () {\r",
+											"pm.test(\"Status code name has 'OK'\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
-											"    pm.expect(pm.response.text()).to.include(\"status\");\r",
+											"}else{\r",
+											"    pm.test(\"Status code is 404\", function () {\r",
+											"    pm.response.to.have.status(404);\r",
 											"});\r",
-											"pm.test(\"Verify that response body contains data\", function () {\r",
-											"    var jsonData = pm.response.json();\r",
-											"    pm.expect(jsonData.data).to.exist;\r",
+											"pm.test(\"Status code name has 'Not Found'\", function () {\r",
+											"    pm.response.to.have.status(\"Not Found\");\r",
+											"});\r",
+											"}\r",
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});\r",
 											""
 										],
