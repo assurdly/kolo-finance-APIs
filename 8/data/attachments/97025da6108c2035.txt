@@ -1,0 +1,7 @@
+[
+    {
+        "sender": "ZENITHBANK",
+        "data": "Acct:220**061\\n      DT:06/08/2023:1:40:16PM\\n      Airtime//2348089722636//airtel\\n      DR Amt:1,200.00\\n      Bal:42.99\\n      REF:2504420991\\n      Chat with ZiVA on WhatsApp bit.ly/chatziva",
+        "time": "2023-08-06 13:41:00"
+    }
+]

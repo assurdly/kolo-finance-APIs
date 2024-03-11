@@ -1,0 +1,1 @@
+{"status":"success","data":{"email":"demo@assurdly.com","first_name":"","last_name":"","last_seen_ip":"20.97.191.101","consented":true,"consented_on":"2023-11-16","id":"1c7be1fd-69eb-4227-adf1-ad001333a6de","verified":false,"beta":false,"country":"NGA","referral_code":null,"created_on":"2024-03-11T07:34:46.103Z","deleted_on":null}}
