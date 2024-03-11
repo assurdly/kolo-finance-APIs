@@ -1,0 +1,16 @@
+{
+    "Date": "Mon, 11 Mar 2024 08:01:20 GMT",
+    "Content-Type": "text/plain",
+    "Connection": "keep-alive",
+    "X-Powered-By": "Express",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Expose-Headers": "access-token,refresh-token",
+    "X-Request-ID": "null",
+    "ETag": "W/\"50-jg10yrkHwbiN8YMxNxMo77cNAaI\"",
+    "Age": "0",
+    "Via": "http/1.1 api-umbrella (ApacheTrafficServer [cMsSf ])",
+    "X-Cache": "MISS",
+    "CF-Cache-Status": "DYNAMIC",
+    "Server": "cloudflare",
+    "CF-RAY": "862a04162aec21a9-ORD"
+}

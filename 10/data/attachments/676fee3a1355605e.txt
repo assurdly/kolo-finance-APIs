@@ -1,0 +1,1 @@
+{"status":"success","data":{"account_name":"UZOR  PRISCALINE","account_number":"0029846969","data_source":["email","sms"],"description":"This is my savings account","id":"a0af9399-1029-4928-8bc4-2e49156100df","created_on":"2024-03-11T08:01:19.465Z","deleted_on":null}}
