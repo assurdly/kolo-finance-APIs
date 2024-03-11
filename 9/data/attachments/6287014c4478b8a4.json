@@ -1,0 +1,10 @@
+{
+    "Authorization": "Bearer {{access_token}}",
+    "User-Agent": "PostmanRuntime/7.36.3",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "608bc056-aadf-4a7a-b941-3f7efdbf800a",
+    "Host": "vigil.lendsqr.com",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive"
+}

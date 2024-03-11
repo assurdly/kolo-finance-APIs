@@ -1,0 +1,6 @@
+{
+    "bank_id": "",
+    "account_number": "account_number",
+      "data_source": ["email","sms"],
+    "description": "This is my savings account"
+}

@@ -1,0 +1,5 @@
+{
+    "code": "4/0AfJohXkYiHEAYbkX-raBcJF01GqElrki11V825Y0iIt-3OxOnNNW8Uxp7kCVTtF-LZc9cg",
+    "consented": true,
+    "consented_on": "2023-11-16"
+}

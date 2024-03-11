@@ -1,0 +1,11 @@
+{
+    "phone_number": "08089722636",
+    "first_name": "Fro",
+    "last_name": "Ggy",
+    "street": "Jinky",
+    "city": "West Jed",
+    "state": "Lagos",
+    "country": "NGA",
+    "gender": "Male",
+    "dob": "1900-10-31"
+}

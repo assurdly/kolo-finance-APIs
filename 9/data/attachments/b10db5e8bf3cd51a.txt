@@ -1,0 +1,11 @@
+{
+    "phone_number": "",
+    "first_name": "Priscaline",
+    "last_name": "Uzor",
+    "street": "Roberts Springs",
+    "city": "Alafaya",
+    "state": "Lagos",
+    "country": "NGA",
+    "gender": "Male",
+    "dob": "1990-03-04"
+}
