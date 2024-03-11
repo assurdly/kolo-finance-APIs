@@ -1026,7 +1026,7 @@
 											" pm.test(\"Status code is 200\", function () {\r",
 											"     pm.response.to.have.status(200);\r",
 											" });\r",
-											" pm.test(\"Status code name has string\", function () {\r",
+											" pm.test(\"Status code name has 'OK'\", function () {\r",
 											"     pm.response.to.have.status(\"OK\");\r",
 											" });\r",
 											"// pm.test(\"Verify that body contains status\", function () {\r",
