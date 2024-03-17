@@ -1163,7 +1163,8 @@
 											"    pm.expect(pm.response.text()).to.include(\"message\");\r",
 											"});"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -1249,6 +1250,7 @@
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
+											"\r",
 											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
@@ -1273,7 +1275,8 @@
 											"});\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
