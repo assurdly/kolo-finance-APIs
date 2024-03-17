@@ -1,0 +1,17 @@
+{
+    "Date": "Sun, 17 Mar 2024 17:48:46 GMT",
+    "Content-Type": "application/json; charset=utf-8",
+    "Content-Length": "23",
+    "Connection": "keep-alive",
+    "X-Powered-By": "Express",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Expose-Headers": "access-token,refresh-token",
+    "X-Request-ID": "null",
+    "ETag": "W/\"17-SuRA/yvUWUo8rK6x7dKURLeBo+0\"",
+    "Age": "0",
+    "Via": "http/1.1 api-umbrella (ApacheTrafficServer [cMsSf ])",
+    "X-Cache": "MISS",
+    "CF-Cache-Status": "DYNAMIC",
+    "Server": "cloudflare",
+    "CF-RAY": "865ed0d2db002ea5-LAX"
+}

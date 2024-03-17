@@ -1,0 +1,6 @@
+{
+    "bank_id": "{{Account number GT}}",
+    "account_number": "2208667066667",
+    "data_source":  ["email","sms"],
+    "description": "This is my savings account"
+}

@@ -1,0 +1,6 @@
+{
+    "bank_id": "c4ca4238a0b923820dcc509a6f75849b",
+    "account_number": "account_number",
+      "data_source": ["email","sms"],
+    "description": "This is my savings account"
+}
