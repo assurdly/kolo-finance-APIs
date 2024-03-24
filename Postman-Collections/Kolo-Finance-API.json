@@ -641,7 +641,7 @@
 											"pm.environment.set('access-token', pm.response.headers.get('access-token'))",
 											"pm.environment.set('refresh-token', pm.response.headers.get('refresh-token'))",
 											"",
-											"pm.test(\"Status code is 200\", function () {",
+											"pm.test(\"Status code is '200'\", function () {",
 											"    pm.response.to.have.status(200);",
 											"});",
 											"pm.test(\"Status code name has string\", function () {",
@@ -658,7 +658,8 @@
 											"",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
